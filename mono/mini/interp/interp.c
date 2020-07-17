@@ -1917,6 +1917,9 @@ interp_runtime_invoke (MonoMethod *method, void *obj, void **params, MonoObject 
 		 * This can happen on wasm where native frames cannot be skipped during EH.
 		 * EH processing will continue when control returns to the interpreter.
 		 */
+
+		g_warning ("NULL interp_runtime_invoke");
+
 		return NULL;
 	}
 	return (MonoObject*)result.data.p;
